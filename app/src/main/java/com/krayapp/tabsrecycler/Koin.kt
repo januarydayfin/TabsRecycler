@@ -19,9 +19,8 @@ object Koin {
 
         single<IMainRepo>{MainRepo()}
 
-
-        viewModel { MainViewModel() }
-        viewModel { SecondViewModel() }
+        viewModel { MainViewModel(repository = get()) }
+        viewModel { SecondViewModel(repository = get()) }
     }
 
 }
