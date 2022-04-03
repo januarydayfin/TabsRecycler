@@ -1,4 +1,6 @@
 package com.krayapp.tabsrecycler.viewmodel
 
-class SecondViewModel {
+import androidx.lifecycle.ViewModel
+
+class SecondViewModel:ViewModel() {
 }
