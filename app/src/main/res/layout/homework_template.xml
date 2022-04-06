@@ -21,11 +21,13 @@
             android:layout_height="wrap_content"
             tools:text = "History"/>
         <TextView
+            android:id="@+id/time_remaining"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text = "2 дня осталось"
             android:textColor="@color/red"/>
         <TextView
+            android:id="@+id/homework_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text = "Домашнее задание"/>

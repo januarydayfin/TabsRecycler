@@ -21,12 +21,13 @@
         android:id="@+id/timer"
         layout="@layout/timer_layout" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/homework_recycler"
-        app:layout_constraintTop_toBottomOf="@id/timer" />
+   <androidx.viewpager2.widget.ViewPager2
+       android:id="@+id/view_pager"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       app:layout_constraintBottom_toTopOf="@+id/homework_recycler"
+       app:layout_constraintTop_toBottomOf="@id/timer"
+       />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homework_recycler"
@@ -37,6 +38,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/homework_template" />
+        tools:listitem="@layout/homework_template"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,11 +11,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 object Koin {
-    private val cicerone = Cicerone.create()
     fun getModule() = module {
-        //Cicerone
-        single<Router> { cicerone.router }
-        single<NavigatorHolder> { cicerone.getNavigatorHolder() }
 
         single<IMainRepo>{MainRepo()}
 
