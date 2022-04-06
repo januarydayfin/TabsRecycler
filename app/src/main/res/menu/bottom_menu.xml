@@ -5,11 +5,11 @@
     <item
         android:id="@+id/first_page"
         android:title="@string/first_page"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         android:icon="@drawable/ic_first"/>
     <item
         android:id="@+id/second_page"
         android:title="@string/second_page"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         android:icon="@drawable/ic_second"/>
 </menu>

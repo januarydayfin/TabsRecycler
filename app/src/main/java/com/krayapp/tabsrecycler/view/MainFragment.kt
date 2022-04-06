@@ -24,10 +24,10 @@ class MainFragment : Fragment(R.layout.main_fragment) {
     }
 
     private fun renderTimer(array: IntArray) {
-        viewBinding.days.text = array[0].toString()
-        viewBinding.hours.text = array[1].toString()
-        viewBinding.minute.text = array[2].toString()
-        viewBinding.seconds.text = array[3].toString()
+        viewBinding.timer.days.text = array[0].toString()
+        viewBinding.timer.hours.text = array[1].toString()
+        viewBinding.timer.minute.text = array[2].toString()
+        viewBinding.timer.seconds.text = array[3].toString()
     }
 
     private fun observeTimer() {

@@ -31,7 +31,6 @@ class MainViewModel(private val repository: IMainRepo) : ViewModel() {
         var current_date = Date()
         timerJob = timerScope.launch {
             while (!current_date.after(event_date)){
-                delay(1000L)
                 current_date = Date()
                 var diff = event_date.time - current_date.time
                 var days = (diff / (24 * 60 * 60 * 1000)).toInt()
@@ -39,6 +38,7 @@ class MainViewModel(private val repository: IMainRepo) : ViewModel() {
                 var minutes = (diff / (60 * 1000) % 60).toInt()
                 var seconds = (diff / 1000 % 60).toInt()
                 _timerLiveData.postValue(intArrayOf(days,hours,minutes,seconds))
+                delay(1000L)
             }
         }
     }

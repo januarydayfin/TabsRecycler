@@ -4,5 +4,6 @@ import java.util.*
 
 data class Lesson(
     val lessonName: String,
-    val time: Date
+    val time: Date,
+    val teacher:String
 )
