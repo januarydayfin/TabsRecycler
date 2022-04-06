@@ -37,6 +37,14 @@ class SecondFragment:Fragment(R.layout.second_fragment), AdapterDelegate {
     override fun onPickLesson(lesson: Lesson) {
         Toast.makeText(context, lesson.lessonName, Toast.LENGTH_SHORT).show()
     }
+
+    override fun skypeBtn() {
+        val intent = activity?.packageManager?.getLaunchIntentForPackage("com.skype.raider")
+        if (intent != null){
+            startActivity(intent)
+        }
+    }
+
     private fun getLessons(){
         viewModel.lessonLiveData.observe(viewLifecycleOwner){
             renderLessonList(it)
@@ -46,4 +54,5 @@ class SecondFragment:Fragment(R.layout.second_fragment), AdapterDelegate {
     private fun renderLessonList(list:List<Lesson>){
         lessonsAdapter.submitList(list)
     }
+
 }

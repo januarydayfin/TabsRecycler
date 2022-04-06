@@ -1,5 +1,6 @@
 package com.krayapp.tabsrecycler.view
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -64,7 +65,12 @@ class MainFragment : Fragment(R.layout.main_fragment), AdapterDelegate {
     private fun renderLessonList(list: List<Lesson>) {
         viewPagerAdapter.submitList(list)
     }
-
+    override fun skypeBtn() {
+        val intent = activity?.packageManager?.getLaunchIntentForPackage("com.skype.raider")
+        if (intent != null){
+            startActivity(intent)
+        }
+    }
     private fun renderHomeworkList(list: List<Homework>) {
         homeworkAdapter.submitList(list)
     }

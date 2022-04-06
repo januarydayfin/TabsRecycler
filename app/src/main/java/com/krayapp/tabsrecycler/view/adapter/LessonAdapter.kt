@@ -34,6 +34,7 @@ class LessonViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             root.setOnClickListener{
                 delegate?.onPickLesson(lesson)
             }
+            skypeBtn.setOnClickListener{delegate?.skypeBtn()}
         }
     }
 }
