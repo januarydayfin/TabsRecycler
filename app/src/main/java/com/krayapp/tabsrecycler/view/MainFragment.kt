@@ -77,5 +77,4 @@ class MainFragment : Fragment(R.layout.main_fragment), AdapterDelegate {
         Toast.makeText(context, lesson.lessonName, Toast.LENGTH_SHORT).show()
     }
 
-
 }
