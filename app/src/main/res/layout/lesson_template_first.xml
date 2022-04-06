@@ -1,42 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/DefaultCardStyle"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="40dp">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:padding="15dp"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        style="@style/DefaultCardStyle"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/lesson_name"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="@dimen/lesson_title_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="History"
-            />
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp">
 
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/lesson_name"
-            app:layout_constraintTop_toBottomOf="@+id/lesson_name"
-            tools:text="9:00 - 9:30" />
+            android:padding="15dp">
 
-        <Button
-            android:id="@+id/skypeBtn"
-            android:text="@string/skype"
-            android:backgroundTint="#03A8DA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/lesson_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/lesson_title_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="History" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/lesson_name"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name"
+                tools:text="9:00 - 9:30" />
+
+            <Button
+                android:id="@+id/skypeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#03A8DA"
+                android:text="@string/skype"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

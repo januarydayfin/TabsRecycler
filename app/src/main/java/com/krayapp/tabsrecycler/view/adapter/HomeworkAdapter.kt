@@ -13,9 +13,7 @@ import com.krayapp.tabsrecycler.entity.Lesson
 
 class HomeworkAdapter(private val adapterDelegate: AdapterDelegate?) :
     ListAdapter<Homework, HomeworkViewHolder>(HomeworkDiffUtil) {
-    interface AdapterDelegate {
-        fun onPick(homework: Homework)
-    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeworkViewHolder =
         HomeworkViewHolder(
@@ -32,11 +30,12 @@ class HomeworkAdapter(private val adapterDelegate: AdapterDelegate?) :
 class HomeworkViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val viewBinding: HomeworkTemplateBinding by viewBinding()
 
-    fun bind(homework: Homework, delegate:HomeworkAdapter.AdapterDelegate?){
+    fun bind(homework: Homework, delegate:AdapterDelegate?){
         with(viewBinding){
             lessonName.text = homework.lesson
-            timeRemaining.text = homework.days.toString()
+            timeRemaining.text = "${homework.days} дней осталось"
             homeworkView.text = homework.homework
+            root.setOnClickListener{delegate?.onPickHomework(homework)}
         }
     }
 }

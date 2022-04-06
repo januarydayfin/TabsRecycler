@@ -9,11 +9,13 @@ import com.krayapp.tabsrecycler.R
 import com.krayapp.tabsrecycler.databinding.MainFragmentBinding
 import com.krayapp.tabsrecycler.entity.Homework
 import com.krayapp.tabsrecycler.entity.Lesson
+import com.krayapp.tabsrecycler.view.adapter.AdapterDelegate
 import com.krayapp.tabsrecycler.view.adapter.HomeworkAdapter
+import com.krayapp.tabsrecycler.view.adapter.LessonAdapter
 import com.krayapp.tabsrecycler.viewmodel.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainFragment : Fragment(R.layout.main_fragment), HomeworkAdapter.AdapterDelegate {
+class MainFragment : Fragment(R.layout.main_fragment), AdapterDelegate {
     companion object {
         fun newInstance() = MainFragment()
     }
@@ -21,12 +23,15 @@ class MainFragment : Fragment(R.layout.main_fragment), HomeworkAdapter.AdapterDe
     private val viewBinding: MainFragmentBinding by viewBinding()
     private val viewModel: MainViewModel by viewModel()
     private var homeworkAdapter = HomeworkAdapter(this)
+    private var viewPagerAdapter = LessonAdapter(this)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewBinding.homeworkRecycler.adapter = homeworkAdapter
+        viewBinding.viewPager.adapter = viewPagerAdapter
         observeTimer()
         getHomework()
+        getLessons()
     }
 
     private fun renderTimer(array: IntArray) {
@@ -57,15 +62,20 @@ class MainFragment : Fragment(R.layout.main_fragment), HomeworkAdapter.AdapterDe
 
 
     private fun renderLessonList(list: List<Lesson>) {
-
+        viewPagerAdapter.submitList(list)
     }
 
     private fun renderHomeworkList(list: List<Homework>) {
         homeworkAdapter.submitList(list)
     }
 
-    override fun onPick(homework: Homework) {
+    override fun onPickHomework(homework: Homework) {
         Toast.makeText(context, homework.homework, Toast.LENGTH_SHORT).show()
     }
+
+    override fun onPickLesson(lesson: Lesson) {
+        Toast.makeText(context, lesson.lessonName, Toast.LENGTH_SHORT).show()
+    }
+
 
 }

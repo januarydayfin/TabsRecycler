@@ -6,10 +6,10 @@ import java.util.*
 
 class MainRepo : IMainRepo {
     private val lessonList: MutableList<Lesson> = mutableListOf(
-        Lesson("Science", Date(2022, 4, 22, 13, 30), "Ivanov A.V"),
-        Lesson("History", Date(2022, 4, 22, 12, 30),"Petrov V.B" ),
-        Lesson("Math", Date(2022, 4, 22, 11, 30), "Skalkina A.U"),
-        Lesson("Physics", Date(2022, 4, 22, 10, 30), "Medvedev A.U")
+        Lesson("Science","9:00 - 9:30" , "Ivanov A.V"),
+        Lesson("History","9:35 - 10:05","Petrov V.B" ),
+        Lesson("Math","10:10 - 10:40 " ,"DatSkalkina A.U"),
+        Lesson("Physics", "11:00 - 11:30", "Medvedev A.U")
     )
     private val homeworkList:MutableList<Homework> = mutableListOf(
         Homework("Science", "Выучить таблицу элементов",1),
