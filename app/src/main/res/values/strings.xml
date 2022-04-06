@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Tabs+Recycler</string>
+    <string name="first_page">First Page</string>
+    <string name="second_page">Second Page</string>
+    <string name="teacher">Teacher:</string>
+    <string name="are_you_ready_for_exams">Are you ready for exams?</string>
+    <string name="skype">Skype</string>
 </resources>
